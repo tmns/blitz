@@ -6,7 +6,7 @@ Before getting started, you should know **this is alpha software**. Blitz is inc
 
 If you have any issues at all, please [open an issue](https://github.com/blitz-js/blitz/issues/new/choose) or join the [Blitz slack](https://slack.blitzjs.com) and talk to us in the **#help** channel. If you get stuck and frustrated, please don't blame yourself. This user guide, and Blitz in general, is not yet fine-tuned for those with less experience. But eventually, it will be because this is very important to us.
 
-If you’re looking for a slower, more guided start to Blitz, read the [Blitz Beginner Tutorial](https://github.com/blitz-js/blitz/blob/canary/TUTORIAL.md).
+If you’re looking for a slower, more guided start to Blitz, read the **[Blitz Beginner Tutorial](https://github.com/blitz-js/blitz/blob/canary/TUTORIAL.md)**.
 
 <br>
 
@@ -264,6 +264,7 @@ Blitz uses the `blitz.config.js` config file at the root of your project. This i
 3. You need your entire database connection string. If you need, [read the Prisma docs on this](https://www.prisma.io/docs/reference/database-connectors/postgresql#connection-details).
    1. If deploying to serverless with a connection pool, make sure you get the connection string to your connection pool, not directly to the DB.
 4. You need to change the defined datasource in `db/schema.prisma` from SQLite to Postgres
+5. Change your build script in package.json to be `blitz db migrate && blitz build` so that the production DB will be migrated on each deploy
 
 #### Serverless
 
@@ -358,7 +359,7 @@ Here's the list of big things that are currently missing from Blitz but are a to
 
 ## FAQ
 
-- **Does Blitz support vanilla Javascript?** Yes, but `blitz new` generates all Typescript files right now. You can add new files with JS and/or convert the generated files to JS. There's an [open issue for generating vanilla JS files](https://github.com/blitz-js/blitz/issues/160) that needs help.
+- **Does Blitz support vanilla Javascript?** Yes, but `blitz new` generates all Typescript files right now. We are actively working on this. It mostly works, but we have a few major bugs to fix before it's ready for prime time.
 - **Will you support other ESLint configs for the `blitz new` app?** Yes, there's [an issue for this](https://github.com/blitz-js/blitz/issues/161)
 
 <br>
